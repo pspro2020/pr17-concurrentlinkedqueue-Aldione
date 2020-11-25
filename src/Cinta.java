@@ -8,11 +8,9 @@ import java.util.concurrent.TimeUnit;
 public class Cinta {
     ConcurrentLinkedQueue<Elemento> concurrentLinkedQueue = new ConcurrentLinkedQueue<>();
 
-    public void soltarElemento(int tolvaId) throws InterruptedException {
-        for (int i = 0; i < 5; i++) {
-            TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(1,3));
-            concurrentLinkedQueue.add(new Elemento(tolvaId, i+1));
-        }
+    public void soltarElemento(int tolvaId, int elementoId) throws InterruptedException {
+        TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(1,3));
+        concurrentLinkedQueue.add(new Elemento(tolvaId, elementoId));
     }
 
     public void separador() throws InterruptedException {
